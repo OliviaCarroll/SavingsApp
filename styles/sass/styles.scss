@@ -1,0 +1,231 @@
+@import "fonts";
+@import "colors";
+
+html,
+body {
+    height: 100%;
+}
+
+h1,h3,th,td,label,input {
+    text-align: center;
+    font-family: $main-font;
+}
+
+h1,h3,th,td,label,input,p,button {
+    font-family: $main-font;
+}
+
+#project-container {
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    #main-form {
+        min-width: 33.333%;
+        background-color: lightgray;
+        border-radius: 5px;
+        padding: 15px;
+
+        #inner-form {
+
+            section {
+                margin: 15px;
+            }
+
+            .labeled-section {
+                >label {
+                    display: inline-block;
+                    background-color: white;
+                    color: rgb(100, 100, 100);
+                    border-radius: 10px 10px 0 0;
+                    padding: 5px 7.5px 2.5px;
+                }
+
+                .labeled-section-content {
+                    margin: 0;
+                    font-size: 2rem;
+                    padding: 5px 7.5px;
+                    border-radius: 0 10px 10px 10px;
+                    color: white;
+                }
+            }
+
+            #current-balance {
+                p {
+                    background-color: $green;
+                }
+            }
+
+            #summary {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 10px;
+
+                .summary-section {
+                    width: 50%;
+                    margin: 0 5px;
+                    padding: 0;
+                    background-color: white;
+                    border-radius: 10px;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
+
+                    label {
+                        padding: 10px 0;
+                        border-radius: 10px 10px 0 0;
+                        font-weight: bold;
+                        color: white;
+                        width: 100%;
+                    }
+
+                    p {
+                        font-size: 1.25rem;
+                        margin: 10px 0;
+                    }
+
+                    &:first-child {
+
+                        label {
+                            background-color: $green;
+                        }
+
+                        border-right: 1px solid lightgray;
+                    }
+
+                    &:last-child {
+
+                        label {
+                            background-color: $burnt-orange;
+                        }
+
+                        border-left: 1px solid lightgray;
+                    }
+                }
+            }
+
+            #history {
+                .labeled-section-content {
+                    background-color: $mauve;
+
+                    ul {
+                        list-style: none;
+                        padding: 0;
+                        margin: 15px;
+
+                        .transaction {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            margin: 10px 0;
+
+                            font-size: 0.75rem;
+                            color: rgb(100, 100, 100);
+                            background-color: white;
+
+                            box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
+
+                            div {
+
+                                text-align: center;
+
+                                &:first-child {
+                                    width: 75%;
+                                }
+
+                                &:last-child {
+                                    width: 25%;
+                                    font-weight: bold;
+                                    color: white;
+                                }
+
+                            }
+                        }
+
+                        .income {
+
+                            div:last-child {
+                                background-color: $green;
+                            }
+
+                        }
+
+                        .outgoing {
+                            div:last-child {
+                                background-color: $burnt-orange;
+                            }
+                        }
+                    }
+                }
+            }
+
+            #add-transaction {
+                .labeled-section-content {
+                    font-size: 1rem;
+                    padding: 15px;
+                    background-color: $blue;
+
+                    #transaction-form-fields {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+
+                        >div {
+                            margin: 10px 0;
+
+                            label {
+                                font-weight: bold;
+                            }
+
+                            input {
+                                border: 1px solid rgb(150, 150, 150);
+                                border-radius: 5px;
+                                padding: 5px;
+                            }
+                        }
+                    }
+
+                    #transaction-buttons {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        padding: 10px 10px 0;
+
+                        button {
+                            padding: 10px 15px;
+                            margin: 0 15px;
+                            border: none;
+                            border-radius: 10px;
+                            color: white;
+                            font-weight: bold;
+                            box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
+
+                            &#add-transaction-button {
+                                background-color: $green;
+                            }
+
+                            &#clear-form-button {
+                                background-color: $burnt-orange;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
+        table {
+            width: 100%;
+        }
+    }
+}

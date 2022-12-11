@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,200&display=swap" rel="stylesheet">
+    <link href="styles/styles.css" rel="stylesheet"/>
+    <title>SavingsApp</title>
+</head>
+<body>
+    <div id="project-container">
+
+        <div id="main-form">
+
+            <h1>Savings</h1>
+
+            <div id="inner-form">
+                
+                <section id="current-balance" class="labeled-section">
+                    <label>Total Savings</label>
+                    <p class="labeled-section-content">0.00€</p>
+                </section>
+
+                <section id="summary">
+                    <div id="income" class="summary-section">
+                        <label>Income</label>
+                        <p>0.00€</p>
+                    </div>
+                    <div id="outgoings" class="summary-section">
+                        <label>Outgoings</label>
+                        <p>0.00€</p>
+                    </div>
+                </section>
+                
+                <section id="history" class="labeled-section">
+                    <label>History</label>
+                    <div class="labeled-section-content">
+                        <ul id="transaction-list">
+
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="add-transaction" class="labeled-section">
+                    <label>Add Transaction</label>
+                    <div class="labeled-section-content">
+                        <div id="transaction-form-fields">
+                            <div>
+                                <label>Concept</label>
+                                <input type="text" id="add-concept" placeholder="Transaction concept">
+                            </div>
+                            <div>
+                                <label>Amount</label>
+                                <input type="text" id="add-amount" placeholder="Use minus sign for expense">
+                            </div>
+                        </div>
+                        <div id="transaction-buttons">
+                            <button id="add-transaction-button">Add</button>
+                            <button id="clear-form-button">Clear</button>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
