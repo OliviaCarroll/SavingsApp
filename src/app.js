@@ -16,7 +16,7 @@ const clearFormButton = document.getElementById("clear-form-button")
 
 
 let transactionRecords = [];
-
+let transactions = document.getElementsByClassName("remove-transaction")
 // add transaction
 addTransactionButton.addEventListener("click", () => {
 
@@ -24,7 +24,6 @@ addTransactionButton.addEventListener("click", () => {
     const amount = amountField.value
 
     let newTransaction = {
-       // id: generateRandomID(),
         concept,
         amount
     }
@@ -35,14 +34,20 @@ addTransactionButton.addEventListener("click", () => {
     let amountDiv = `<div><p>${amount}</p></div>`
 
     let transactionDivString = 
-        `<li class="${transactionType} transaction">${conceptDiv}${amountDiv} <button id="delete-transaction" onclick="removeTransaction(${
-            newTransaction.concept})">X</button></li>`
+        `<li class="${transactionType} transaction">${conceptDiv}${amountDiv} <button id="delete-transaction-${concept}" class="remove-transaction">X</button></li>`
 
     let newListElement = document.createElement("li")
 
     newListElement.innerHTML = transactionDivString
 
     transactionList.appendChild(newListElement)
+
+    newListElement.addEventListener("click", (event) => {
+        let transactionId = event.target.id 
+        removeTransaction(transactionId)
+        transactionList.innerHTML = ""
+        processTransactions()
+    })
 
     transactionRecords.push(newTransaction)
 
@@ -56,10 +61,6 @@ addTransactionButton.addEventListener("click", () => {
     
 })
 
-/* function generateRandomID() {
-    return Math.floor(Math.random() * 100000)
-}
- */
 function removeTransaction(concept){
     transactionRecords.forEach((transaction, i) => {
         if(transaction.concept == concept){
@@ -71,9 +72,6 @@ function removeTransaction(concept){
 function removeTransaction(id) {
     transactionRecords = transactionRecords.filter((transaction) => transaction.id !== id)
     processTransactions()
-    currentBalanceElement.innerHTML = `${overallBalance}€`
-    totalIncomeDisplay.innerHTML = `${totalIncome}€`
-    totalOutgoingDisplay.innerHTML = `${totalOutgoing}€`
 }
  */
 clearFormButton.addEventListener("click", () => {
