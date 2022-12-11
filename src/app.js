@@ -24,6 +24,7 @@ addTransactionButton.addEventListener("click", () => {
     const amount = amountField.value
 
     let newTransaction = {
+       // id: generateRandomID(),
         concept,
         amount
     }
