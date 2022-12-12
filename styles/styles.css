@@ -104,10 +104,14 @@ h1, h3, th, td, label, input, p, button {
   background-color: white;
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
 }
+#project-container #main-form #inner-form #history .labeled-section-content ul .transaction button {
+  border-radius: 50%;
+  background-color: #C38D9E;
+}
 #project-container #main-form #inner-form #history .labeled-section-content ul .transaction div {
   text-align: center;
 }
-#project-container #main-form #inner-form #history .labeled-section-content ul .transaction div:first-child {
+#project-container #main-form #inner-form #history .labeled-section-content ul .transaction div:nth-child(2) {
   width: 75%;
 }
 #project-container #main-form #inner-form #history .labeled-section-content ul .transaction div:last-child {

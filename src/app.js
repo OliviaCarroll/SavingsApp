@@ -52,7 +52,7 @@ function updateDOM(newTransaction) {
     let amountDiv = `<div><p>${newTransaction.amount}</p></div>`
 
     let transactionDivString = 
-        `<li class="${transactionType} transaction">${conceptDiv}${amountDiv} <button id="delete-transaction-${newTransaction.id}" class="remove-transaction" onclick="removeTransaction(${newTransaction.id})">X</button></li>`
+        `<li class="${transactionType} transaction"> <button id="delete-transaction-${newTransaction.id}" class="remove-transaction" onclick="removeTransaction(${newTransaction.id})">X</button>${conceptDiv}${amountDiv} </li>`
     
     let newListElement = document.createElement("li")
     newListElement.innerHTML = transactionDivString
